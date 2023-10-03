@@ -17,3 +17,6 @@ public/emojis
 *~
 *swp
 *swo
+
+/docker-compose.yaml
+/Dockerfile

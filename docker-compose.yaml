@@ -1,5 +1,6 @@
 services:
   elk:
+    image: kuttkatrea/mastodon-elk:latest
     build:
       context: .
       dockerfile: Dockerfile
@@ -7,6 +8,8 @@ services:
       # make sure this directory has the same ownership as the elk user from the Dockerfile
       # otherwise Elk will not be able to store configs for accounts
       # e.q. mkdir ./elk-storage; sudo chown 911:911 ./elk-storage
-      - './elk-storage:/elk/data'
+      - 'elk-storage:/elk/data'
     ports:
       - 5314:5314
+volumes:
+  elk-storage: {}
